@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native'
 import colors from '../theme/colors';
 import commonStyles from '../theme/commonStyles';
+import PropTypes from 'prop-types';
 const BlueBorderButton = ({title, onPress}) => {
     return (<TouchableOpacity style={styles.blueBorderButton} onPress={onPress}>
            <Text style={{...commonStyles.textStyle, ...styles.textColor}}>{title}</Text>
@@ -21,5 +22,9 @@ const styles = StyleSheet.create({
         color : colors.white
     }
 })
+BlueBorderButton.propTypes = {
+    title: PropTypes.string,
+    onPress : PropTypes.func
+  }
 
 export default BlueBorderButton;

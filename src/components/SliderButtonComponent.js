@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native'
 import colors from '../theme/colors';
 import commonStyles from '../theme/commonStyles';
 import SwipeButton from 'rn-swipe-button';
+import PropTypes from 'prop-types';
 const SliderButtonComponent = ({title, onPress}) => {
     return ( 
     <SwipeButton
@@ -26,5 +27,10 @@ const styles = StyleSheet.create({
         fontSize : 12
         },
 })
+
+SliderButtonComponent.propTypes = {
+    title: PropTypes.string,
+    onPress : PropTypes.func
+  }
 
 export default SliderButtonComponent;

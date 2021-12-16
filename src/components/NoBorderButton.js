@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native'
 import colors from '../theme/colors';
 import commonStyles from '../theme/commonStyles';
+import PropTypes from 'prop-types';
 const NoBorderButton = ({title, onPress}) => {
     return (<TouchableOpacity style={styles.noBorderButton} onPress={onPress}>
            <Text style={commonStyles.textStyle}>{title}</Text>
@@ -17,5 +18,10 @@ const styles = StyleSheet.create({
         alignSelf : 'center'
         },
 })
+
+NoBorderButton.propTypes = {
+    title: PropTypes.string,
+    onPress : PropTypes.func
+  }
 
 export default NoBorderButton;
