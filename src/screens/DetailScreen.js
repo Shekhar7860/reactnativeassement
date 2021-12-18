@@ -1,14 +1,15 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, Alert} from 'react-native'
+import {View, Text, Alert, NativeModules} from 'react-native'
 import { useSelector } from 'react-redux'
 import commonStyles from '../theme/commonStyles';
-import DeviceInfo from 'react-native-device-info';
 const DetailScreen = () => {
     const name = useSelector(state => state.user.name)
 
     useEffect(() => {
+        // console.log('deee', NativeModules.DeviceDetail)
+        const DeviceDetail  =  NativeModules.DeviceDetail
         const checkDevice = async () => {
-        const isEmulator = await DeviceInfo.isEmulator()
+        const isEmulator = await DeviceDetail.isEmulator()
         if(isEmulator)
         {
             Alert.alert('App is running on Emulator/Simulator')
